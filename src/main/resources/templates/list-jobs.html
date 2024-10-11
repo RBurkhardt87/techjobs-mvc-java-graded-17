@@ -11,8 +11,44 @@
   <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
   <!-- TODO #1 - Use a loop to display job results in a table. -->
+  <!--? Creating a table for each job, so I want to put the <table> inside the loop. -->
+  <!--? Is there a way to loop over the different columns instead of hard-coding it all in -->
 
+  <th:block th:each="job : ${jobs}">
+    <table class="job-listing">
+      <tr>
+        <th style="text-align: left">ID</th>
+        <td th:text="${job.id}"></td>
+      </tr>
+      <tr>
+        <th style="text-align: left">Name</th>
+        <td th:text="${job.name}"></td>
+      </tr>
+      <tr>
+        <th style="text-align: left">Employer</th>
+        <td th:text="${job.employer}"></td>
+      </tr>
+      <tr>
+        <th style="text-align: left">Location</th>
+        <td th:text="${job.location}"></td>
+      </tr>
+      <tr>
+        <th style="text-align: left">Position Type</th>
+        <td th:text="${job.positionType}"></td>
+      </tr>
+      <tr>
+        <th style="text-align: left">Skill</th>
+        <td th:text="${job.coreCompetency}"></td>
+      </tr>
+    </table>
+  </th:block>
 </div>
 
 </body>
 </html>
+
+
+
+<!--? THIS PAGE COMES AFTER YOU SELECT THAT JOBS THAT YOU WANT TO REVIEW::-->
+<!--?        EXAMPLE: CLICK ON LOCATION (KANSAS CITY)-->
+<!--?          "Jobs With Location: Kansas City"-->
