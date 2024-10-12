@@ -18,27 +18,35 @@
     <table class="job-listing">
       <tr>
         <th style="text-align: left">ID</th>
-        <td th:text="${job.id}"></td>
+        <td th:style="'font-style: italic;'" th:text="${job.id}"></td>
       </tr>
       <tr>
         <th style="text-align: left">Name</th>
-        <td th:text="${job.name}"></td>
+        <td th:style="'font-style: italic;'"  th:text="${job.name}"></td>
       </tr>
       <tr>
         <th style="text-align: left">Employer</th>
-        <td th:text="${job.employer}"></td>
+        <td>
+          <a th:href="@{/list/jobs(column='employer',value=${job.employer})}" th:style="'font-style: italic;'"  th:text="${job.employer}"></a>
+        </td>
       </tr>
       <tr>
         <th style="text-align: left">Location</th>
-        <td th:text="${job.location}"></td>
+        <td>
+          <a th:href="@{/list/jobs(column='location',value=${job.location})}" th:style="'font-style: italic;'"  th:text="${job.location}"></a>
+        </td>
       </tr>
       <tr>
         <th style="text-align: left">Position Type</th>
-        <td th:text="${job.positionType}"></td>
+        <td>
+          <a th:href="@{/list/jobs(column='positionType',value=${job.positionType})}" th:style="'font-style: italic;'"  th:text="${job.positionType}"></a>
+        </td>
       </tr>
       <tr>
         <th style="text-align: left">Skill</th>
-        <td th:text="${job.coreCompetency}"></td>
+        <td>
+          <a th:href="@{/list/jobs(column='coreCompetency',value=${job.coreCompetency})}" th:style="'font-style: italic;'"  th:text="${job.coreCompetency}"></a>
+        </td>
       </tr>
     </table>
   </th:block>
