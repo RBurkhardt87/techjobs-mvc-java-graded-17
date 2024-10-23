@@ -13,9 +13,12 @@
   <form th:action="@{/search/results}" method = "post">
     <h2>Search by:</h2>
 
+      <!--? I think the stored search selection goes here. I am just not sure how to use a th:field with a radio button -->
+      <!--? probably something to do with th:checked. Maybe even writing a conditional would work somehow. Not sure -->
     <p>
             <span th:each="column : ${columns}">
                 <input
+
                         type="radio"
                         name="searchType"
                         th:id="${column.key}"
